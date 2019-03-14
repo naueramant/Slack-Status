@@ -25,10 +25,12 @@ function gen_config {
     "rules": []
 }
 EOL
+
+    echo "Now add some rules to ~/.config/slack-status.json"
+    echo "See the readme for more information"
 }
 
 install
-gen_config
-
-echo "Now add some rules to ~/.config/slack-status.json"
-echo "See the readme for more information"
+if [ ! -f ~/.config/slack-status.json ]; then
+    gen_config
+fi
