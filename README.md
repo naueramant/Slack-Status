@@ -1,4 +1,4 @@
-# Slack Status Service
+# Slack Wifi Status
 
 Change your slack status based on your current wifi essid. 
 
