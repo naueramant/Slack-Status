@@ -2,7 +2,7 @@
 
 from urllib import request, parse
 import json, os, subprocess, re
-from time import time
+from time import time, ctime
 from functools import lru_cache
 
 config_path = '~/.config/slack-status.json'
@@ -38,7 +38,7 @@ def update_status():
       resp_json = json.loads(resp.read().decode('utf-8'))
 
       if resp_json['ok']:
-        print('updated status:', text, emoji, 'expires', expires)
+        print('updated status:', text, emoji, 'expires', ctime(expires))
       else:
         print('Failed to update status')
         print(resp_json)
