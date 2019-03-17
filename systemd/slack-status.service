@@ -1,11 +1,10 @@
 [Unit]
 Description=Slack Status
-Wants=network-online.target
-After=network-online.target
+After=NetworkManager-wait-online.service
 
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=/usr/local/bin/slack_status_update
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=basic.target

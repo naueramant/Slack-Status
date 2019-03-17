@@ -1,0 +1,12 @@
+[Unit]
+Description=Slack Wifi Status
+After=NetworkManager-wait-online.service
+
+[Timer]
+Persistent=true
+OnBootSec=2min
+OnUnitActiveSec=30min
+Unit=slack-status.service
+
+[Install]
+WantedBy=slack-status.service

@@ -4,8 +4,8 @@ function install {
     sudo cp slack_status.py /usr/local/bin/slack_status_update
     sudo chmod 755 /usr/local/bin/slack_status_update
     sudo cp -p systemd/* /etc/systemd/user
-    systemctl enable --user slack-status.service
-    systemctl start --user slack-status.service
+    systemctl enable --user slack-status.service slack-status.timer
+    systemctl start --user slack-status.service slack-status.timer
 }
 
 function gen_config {
